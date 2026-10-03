@@ -1,0 +1,406 @@
+Program SerialMeasurer - help file
+== = = = = = = = = = = = = = = = = 
+
+actual version 11
+= = = = = = = = =
+Date of last finalising : 2026-10-03
+
+Upgrade :
+=========
+This is uprade of version 10 with author improvements.
+
+Preface :
+=========
+
+I have created this program for serial devices what can communicate 
+via USB-RS232 like Arduino etc. coupled with next modules of sensores 
+like HW-487 or HW-827 etc, in this case with my test modules
+for measuring U in Volts, resistor Rx in Ohms and capacitors Cx 
+above all in mikro Farads.
+
+Producted data are in format .txt, .tab or .meas files 
+and they are only for your personal information purpose 
+and they cannot be taken as generallz results in any case.
+
+I have informed and publiced this help and next files include .exe file 
+packed in .zip with all folders etc. 
+about actual version of this program on Github.
+
+Program was created by Pavel Oupicky, rentier and home worker.
+
+Program was created in Delphi XE Starter 
+and it is working under operation system Windows with 64 bits
+and it was tested by me only in this OS .
+
+Program is distributed by author as freeware for end users .
+   
+Author takes no liability towards of any use of his program.
+
+At 3.10. 2026 					Pavel Oupicky
+
+Contact  on author : Github, PavelOu
+
+Default known problems in my programs  :
+= = = = = = = = = = = = = = = = = = = = =
+- this program is the compilation of many of previous programs created by author,
+- so some functions of his programs are inserted but are in actual version not ready for use.
+- Window OS can open many of windows, but when my programs are running, 
+  it is not impossible use OS Windows close, mini- or maximalization of ones, 
+  as the OS Windows and Deplphi XE Starter program cannot right open or closed them,
+  so if my programs are running, you do not use them ones,
+  or runned program and data will be lost.
+- Delphi XE Starter can product  graphs  format .bmp only about 2 MB 
+  and you must change them then to another format self.
+
+Basic description of this program :
+= = = = = = = = = = = = = = = = = = 
+
+Communication:
+= = = = = = = =
+Program was created for devices what can communicate with PC OS protocol RS232,
+so com ports of PC for communication between personal computers
+with connectors RS232 or USB connectors
+and devices like microcomputers Arduinos or Espressif 
+and their BPM or ECG modules for example.
+
+Home (Main) page (window system) of program:
+= = = = = = = = = = = = = = = = = = = = = = =
+On the Main (Home) window are buttons for calling next functions of this program.
+
+There is listbox with pre-defined files with parameters for your next measurig
+and you can choose the one from this listbox.
+
+These parameters for next measuring  must be pre-set in the regular form 
+what includes name of program and version etc. .
+This right form is controlled and errors are reported.
+
+Description of basic buttons on home page in upper line:
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+About
+- basic description of program
+
+Memo
+- memory for notes saved on PC in the root folder
+
+Graphs
+- list of pre-defined parameters  for graphs
+
+Data test (Checkbox)
+ - if you will set it on, you can see the previous recorded serial data 
+   from your harddisc without a serial device must be connected.
+
+Data
+- read recorded data  measured by serial devices from sensores etc.
+  and saved on harddisc in Data folder in .txt format
+
+Help
+- read this help file or similar ones in .txt format
+
+Hex counts
+- some transfers between bits, bytes and hexbytes
+  rest from my previous programs
+
+
+Description of basic buttons on home page in bottom line:
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Parameters
+- primary readed basic parameters for measurements, data, graph etc.
+
+Inputs
+- list of predefined inputs
+
+Task
+- list of predefined tasks from inputs
+
+Com
+- parameters for communication via com ports and their timings
+ 
+Measure
+- start for measurement process
+
+Menu
+- list of files from previous measurement for next transfer to tabs or graphs
+  when there are a data from actual or previous  measuremet, it is possible to see them 
+  or get and save them into tables or graphs
+
+Serial Test
+- call and read data from serial devices
+- basic test of communication between PC and serial devices like Arduino etc.
+
+End
+- end of program
+
+Example of initial file (.ini)
+= = = = = = = = = = = = = = = 
+
+Purpose: 
+- when program is starting, it call this .ini file at first
+
+SerialMeasurer/11/Inicializace
+Inicializacni soubor pro program SerialMeasurer11
+23.09.2026/12:18:57
+User: licensed
+Path:Par
+File:SerialMeasurer11-Meas-test-1-URC-com3-9600.par
+end
+
+Note:
+- if you choose your file with parameters, you can save
+  this file as your .ini by click on button Save Init
+  and in the next time this file of parameters will be called and open again.
+
+Parameters for tests and measurement (.par file):
+= = = = = = = = = = = = = = = = = = = = = = = = =
+Short description:
+- basic and driver parameters must be set before the programm will start
+- basic parameters must be set in file with extension .par in Par folder
+- in this parameter file must be set all necessary ones include Com parameters etc.
+- parameters for graphs are in the file with extension .grp in  Grp folder
+- help  file name for program must be set in file with extension .txt  in the Help folder
+- task parameters are declared in this file, too
+
+Example of .par file
+= = = = = = = = = = =
+
+SerialMeasurer/11/params
+Measuring URC via inputs A0 to A1
+System Arduino and Measure modules with calibration
+Date:2026-08-19*15:22
+Device:Arduino-Measurer A0 to A1
+Protocol:MEAS/Measure data protocol
+Port:Com,3,9600,8,1,0
+Timing:Timer=10,Sleep=10,Wait=200,Timeout=100
+Inputs:8
+1:Meas/2,0,9.999,1.0/2,P,5.0,0,1000/[V],U+5V(A1),Voltage U in Volts
+2:Meas/2,0,9.999,1.0/3,M,4.0,150,500,750/[V],U+-3V(A2),Voltage U in Volts
+3:Meas/2,0,9.999,1.0/2,P,10.0,0,1000/[V],U+10V(A3),Voltage U in Volts
+4:Meas/2,0,9999,1.0/1,N,0/[V],U(A4),Voltage U in Volts
+5:Meas/2,0,9999,1.0/1,N,0/[V],U(A5),Voltage U in Volts
+6:Meas/2,0,9999,1.0/1,N,0/[V],U(A6),Voltage U in Volts
+7:Meas/2,0,9999,1.0/1,N,0/[V],U(A7),Voltage U in Volts
+8:Meas/2,0,9.999,1.0/4,Z,2.5,150,500,750/[V],U2.5Vref(A0),Voltage U in Volts
+Tasks:3
+Mer-AV,A,8,end
+Mer-A0-A3,B,8,1,2,3,end
+Mer-A0-A7,C,8,1,2,3,4,5,6,7,end
+Measured interval:0
+Data:Data
+Help:Help\SerialMeasurer11-help.txt
+Graf-par:Grp\Grf-SerialMeasurer-basic-en.grp
+end
+
+Notes:
+Protocol:MEAS (in lower case meas) will be set as basic protocol parameter in all new recorded data files
+
+Data:Data is name of folder for all saved data include tabs and graphs
+
+Measured interval:0 
+ - is the rest from my previos programs and here is set to zero already 
+
+Example of parameters for com port (com):
+= = = = = = = = = = = = = = = = = = = = = 
+
+Port:Com,3,9600,8,1,0
+Timing:Timer=10,Sleep=10,Wait=200,Timeout=100
+
+Note:
+- Port parameters must pass to internal set given by OS Windows (in OS devices include coms)!!
+- this example : Com3, baud rate 9600, 8 bits, 1 stop bit, no parity bit
+- Timing : it defines internal set parameters for communication between PC and serial devices
+
+Example of parameters for inputs :
+= = = = = = = = = = = = = = = = = =
+
+Inputs:8
+1:Meas/2,0,9.999,1.0/2,P,5.0,0,1000/[V],U+5V(A1),Voltage U in Volts
+etc.
+8:Meas/2,0,9.999,1.0/4,Z,2.5,150,500,750/[V],U2.5Vref(A0),Voltage U in Volts
+
+Notes:
+- explanations 
+  1:Protocol/Numering format/Volts and polarity range/Unit, name, description
+
+Example of parameters for tasks :
+= = = = = = = = = = = = = = = =
+
+Tasks:3
+Mer-AV,A,8,end
+Mer-A0-A3,B,8,1,2,3,end
+Mer-A0-A7,C,8,1,2,3,4,5,6,7,end
+
+Notes:
+Tasks:3 = number of tasks
+1/Name of task,Command,inputs,end
+etc.
+
+Example of file for graphs (.grp file):
+= = = = = = = = = = = = = = = = = = = = = 
+
+SerialPlotter11/parameters/graphs
+Graph:SerialPlotter10 - test
+10.6.2026/21:25:21
+0*1*5*min*Axe of time for graph
+0*1*5*2*min*Axe of time for measuring
+0*50*250*a.u.*Axe of intensity for graph
+0*50*250*a.u.*Axe of intensity for measuring - basic
+0*10*50*a.u.*Axe of intensity for measuring - user
+1*1*.point for data on x and y
+1*0*rastr x and rastr y , 0 = no rastr
+Color of line*type of line*width of line from 0 to 8 works
+clBlue*psSolid*3
+clGreen*psSolid*2
+clRed*psSolid*1
+clBlack*psDot*0
+clLima*psDash*2
+clFuchsia*psDashDot*1
+clAqua*psDashDotDot*2
+clPurple*psSolid*0
+end
+
+Note:
+All this commands can interpret Arduino Uno with my sketch 
+Arduino_measurer_URC_en_3.ino
+coupled with measuring modules
+
+
+Simply manual how to use SerialMeasurer11
+= = = = = = = = = = = = = = = = = = = = =
+
+Main(home) window
+= = = = = = = = =
+- after main(home) window is on and OK, push Device Set Button
+- or Com Button, if you are not sure if your com port is set well
+- Open Port window will be shown
+
+Com window
+- - - - - -
+- push Open button
+- if handle of predefined com port will set on, push Purge button and purge this comm port
+- choose Device Par button and Osc Par window will be shown
+
+Device Set window
+- - - - - - - - -
+- choose Q command from Call combobox and push Call button
+- if answer will be OK and green round shape light will be on, you can continue with next parameters
+- for example choose G Y Led from Call combobox and push Call button
+- yellow led on your device (if is installed) will light on
+- choose I command from Serial Commands combobox
+- push Read button and wait  for answer in Answer or Result field
+- if your asked device is on, the one will be confirmed
+- or you will be asked to accept it
+- or choose K command from Serial Commands combobox
+- choose nr of asked device from device combobox
+- push Set button and wait  for answer in Answer or Result field
+- when this answer will repeat your slave device number, this one is on-line
+- if your choosed device is on, it will be confirmed, else zero will be in answer
+- push Read Par button to read pre-set parameters for Measure windows
+- when your device is connected and it is on,
+- push Data button to read data from your device via command A to be sure your device is measured OK 
+
+Measure window
+- - - - - - - -
+- choose your task from listbox with tasks
+- choose plotter type from plotter combobox A or B (more quick when data reading)
+- if you need record of data, cross Record checkbox, New file button will be wisible
+- occasionally write note of you to Note field
+- press Data file button to set the header of this data file what will be used for next data registration
+- press Graph Par button to choose the suitable parameters for time and data axes
+- press Graph and  Graph window will be shown
+- press Display U, if you will meas DC U in Volts, only
+- press Display RC, if you will meas Rx in Ohms or Cx in Farads
+- see detail description of Rx and Cx measuring in Display RC window description
+
+Grapf window
+- - - - - - -
+- set in Radiobutton Time axe for the type of graph time axe shift 
+  when this time will be on the end of time range
+- see and follow your measuring data, then press Stop button
+- after all measuring ends, press Task button
+- confirm if you want to save your data or on your hard disc
+  or into databox for next analysation in tabs or graphs.
+- press Menu button and Menu window will shown
+
+Menu window
+- - - - - -
+- clik on the column with data
+- choose Tab Par or Graph Par
+- set parameters for table or graph
+- click on the Table or Graph Image buttons
+
+Display RC window
+= = = = = = = = = 
+
+Rx measuring
+- - - - - - -
+- choose Rx measuring in Radio group buttons
+- press Meas RC button
+- when U ref in range 0 to 1024 is measurred, press Set U ref buttons
+- choose expexted range of Rx in R ref combobox
+- if you do not use a switcher, change R ref for Rx measuring manually in your contact field
+- connect your measured resistor Rx to Rx contacts on your Meas RC module
+- wait for measuring of U rx in range 0 to 1024 again from Rx/(Rref + Rx) dividier 
+- press Count Rx button and the Rx value will be counted and displayed in Rx edit window
+- if you will test of accuracy of Rx measure, use your own R ref insted of Rx resistor 
+
+Cx measuring
+- - - - - - 
+- choose Cx measuring in Radio group buttons
+- press Meas RC button
+- when U ref in range 0 to 1024 is measurred, press Set U ref buttons
+- if you do not use a switcher, change R ref for Cx measuring manually in your contact field
+- choose expexted range of Cx in C in combobox
+- connect your measured capacitor Cx to Cx contacts on your Meas RC module
+- wait for measuring of U cx in range 0 to 1024 again from Crx/(Rref + Crx) dividier 
+- press Meas Tau button and the Cx will be re-charged due R ref 
+- time of re-charging  and U cx will be displayed in edit windows
+- expected low range of U tau re-charging will be counted and displayed in  edit window
+- note U tau is counted from known formula Utau (in %) = Uref x 38.5 %
+- 38.5 % for the real measuring is in window  Tau in % corected usually in about 40 %
+- after the U tau will be under the counted limit, re-charging will be stoped
+- time of Tau constant will be displayed in  edit window
+- press Count CX button and the capacitance of Cx will be counted from formula Cx = Tau / R ref
+- if you will test of accuracy of Cx measure, use your own C ref insted of Cx capacitor 
+
+R in Cx measuring
+- - - - - - - - -
+- it was my experiment, what was by me not realised to a some result ...
+- there was on my end the project an idea to meas self re-charging of Cx in 100 seconds
+  but there is not sure, how measuring of U tau can change a real result ...
+- so there is no formula how to set an inner R cx resistor in Giga Ohms 
+
+
+Basic RS232 commands used with Arduino Uno in Arduino_measurer_URC_en_3.ino:
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+This commans are readable in program SerialMeasurer versions 11
+and in similar program created by author, of course
+They are suitable for devices with Arduinos or with ESP-NOW system master and slaves
+
+List of used commands for SerialMeasured program:
+= = = = = = = = = = = = = = = = = = = = = = = = =
+Command	Answer
+- - - - - - - -
+A	*A,400,#,CRLF   number is readed analog data example
+B	*B,399,342,346,420,#,CRLF	Cr is carriage return, LF is Line Feed
+C	*C,399,342,346,420,399,342,346,401,#,CRLF - CRLF are marks from RS232 protocol
+D	measuring in cycle - neither used nor realised
+E20	*P,20,400,500,100,#,CRLF = returned all parameters	
+	   20, data time step in mikroseconds
+	      400, off-line readed data with osciloscope here not used
+	          500, max - " -
+	              100, offset for readed data (usually zero) hjere not used
+F	read all transfer detail comments from Arduino (for tests with ESP)
+G	set of TTL 0 (zero) of digital output D6
+H	set of TTL 1 (zero) of digital output D6
+J	*J,analogInput,dataInverted,#,CRLF = info about in devices setted parameters
+I	*I,nr,#,CRLF = test of aktual connected slave device nr in ESP-NOW system
+P	*P,20,300,500,10,#,CRLF = read parameters
+Q	stop of reading details after teste of commands in  ESP-NOW system 
+R	*R,20,300,time,10,#,CRLF = time is the previous data measuring time in microseconds
+S	*S,20,300,time,10,#,CRLF = stop of reading B,C,D data in cycle here not used
+V0	*V,0,#,CRLF - set ou analog input A0 of command A
+V1	*V,1,#,CRLF - set ou analog input A1 - '' - etc.
+
+
+= = = = End of Help file = = = =
