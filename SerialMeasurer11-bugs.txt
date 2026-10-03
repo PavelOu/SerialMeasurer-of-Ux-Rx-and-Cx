@@ -1,0 +1,40 @@
+Program SerialMeasurer11 - bugs
+== = = = = = = = = = = = = = = 
+
+2026-10-03 - Nr of Inputs in .par file
+- - - - - - - - - - - - - - - - - - - -
+- There is expected Nr of max inputs, what is 8 ...
+- so if you wil use less of 8 inputs, change only some
+  from 1 to your number and more inputs let be to nr of 8
+
+- example of .par file :
+SerialMeasurer/11/params
+Measuring URC via inputs A0 to A1
+System Arduino and Measure module with calibration
+Date:2026-08-19*15:22
+Device:Arduino-Measurer A0 to A1
+Protocol:MEAS/Measure data protocol
+Port:Com,3,9600,8,1,0
+Timing:Timer=10,Sleep=10,Wait=200,Timeout=100
+Inputs:8
+1:Meas/2,0,9.999,1.0/2,P,5.0,0,1000/[V],U+5V(A1),Voltage U in Volts
+2:Meas/2,0,9.999,1.0/3,M,4.0,150,500,750/[V],U+-3V(A2),Voltage U in Volts
+3:Meas/2,0,9.999,1.0/2,P,10.0,0,1000/[V],U+10V(A3),Voltage U in Volts
+4:Meas/2,0,9999,1.0/1,N,0/[V],U(A4),Voltage U in Volts
+5:Meas/2,0,9999,1.0/1,N,0/[V],U(A5),Voltage U in Volts
+6:Meas/2,0,9999,1.0/1,N,0/[V],U(A6),Voltage U in Volts
+7:Meas/2,0,9999,1.0/1,N,0/[V],U(A7),Voltage U in Volts
+8:Meas/2,0,9.999,1.0/4,Z,2.5,150,500,750/[V],U2.5Vref(A0),Voltage U in Volts
+Tasks:3
+Mer-AV,A,8,end
+Mer-A0-A3,B,8,1,2,3,end
+Mer-A0-A7,C,8,1,2,3,4,5,6,7,end
+Measured interval:0
+Data:Data
+Help:Help\SerialMeasurer11-help.txt
+Graf-par:Grp\Grf-SerialMeasurer-basic-en.grp
+end
+
+= = = * * * end of bugs * * * = = = 
+
+
